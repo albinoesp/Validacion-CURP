@@ -60,8 +60,8 @@ public class validarCURP {
 
         boolean status = false;
 
-        Pattern pat = Pattern.compile("[A-Z]{4}.*");
-        Matcher match = pat.matcher(CURP);
+        final String formatfour = "[A-Z]{4}.*";
+        status = Pattern.matches(formatfour, CURP);
         System.out.println(CURP);
 
 
