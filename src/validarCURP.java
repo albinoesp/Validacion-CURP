@@ -13,9 +13,12 @@ public class validarCURP {
         if (args.length == 0){
             LOG.severe("No se proporciono la CURP");
             System.exit(1);
+        } else {
+            LOG.severe("Error con la CURP");
+            LOG.severe("FAIL)");
         }
 
-        String CURP = args[0
+        String CURP = args[0];
 
         CURP = CURP.toUpperCase();
         if( validarLongitud(CURP.length()) ){
