@@ -33,13 +33,14 @@ public class validarCURP {
             System.out.printf("La CURP %s no es válida%n", CURP);
             LOG.info("FAIL");
         }
-        if( validarNombre(CURP, name) ){
-            System.out.printf("La CURP tiene el formato correcto para los primeros cuatro digitos");
+        if( validarFormat(CURP) ){
+            System.out.printf("La CURP tiene el formato correcto");
             LOG.info("OK");
         } else {
-            System.out.printf("El formato de los primeros 4 digitos es incorrecto");
+            System.out.printf("El formato de la CURP es incorrecto");
             LOG.info("FAIL");
         }
+
 
 
     }
@@ -56,15 +57,11 @@ public class validarCURP {
         return status;
     }
 
-    public static boolean validarNombre(String CURP, String name) { //validar los primeros 4 digitos de la CURP
-
+    public static boolean validarFormat(String CURP) { //Validar formato de CURP
         boolean status = false;
 
-        final String formatfour = "[A-Z]{4}.*";
+        final String formatfour = "[A-Z]{4}[0-9]{6}[A-Z]{6}[A-Z0-9]{1}[0-9]{1}";
         status = Pattern.matches(formatfour, CURP);
-        System.out.println(CURP);
-
-
 
         return status;
     }
